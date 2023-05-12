@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="bootstrap-5.2.1-dist/css/bootstrap.css">
+</head>
+<style>
+    table {
+        background-color: rgb(231, 227, 227);
+        /* border: 1px solid black; */
+        margin: auto;
+        width: 90%;
+        height: 60vh;
+    }
+    td {
+        /* border: 1px solid black; */
+        padding: 10px;
+        /* margin: auto; */
+        height: 50px;
+    }
+    button {
+        height: 50px;
+        background-color: white;
+        box-shadow:  50px 50px 200px #ece5e5,
+         500px 10px 100px white ;
+    }
+    section {
+        min-height: 70vh;
+        background-color: rgb(245, 242, 237);
+        width: 30%;
+        border-radius: 30px;
+        /* border: 1px solid black; */
+    }
+    #screen {
+     width: 87%;
+     height: 15vh;
+     margin-bottom: 15px;
+    border: 1px solid grey;
+    padding: 15px;
+    color: black;
+}
+     #btnequal{
+         padding-top: 50px;
+         padding-bottom: 100px;
+     }
+@media all and (max-width:1000px) {
+    section {
+        width: 100%;
+        height: 100vh;
+        border-radius: 0%;
+    }
+    
+}
+</style>
+<body>
+  <section class="mx-auto py-3 my-4">
+      <div class=""></div>
+      <div  id="screen" class="shadow mx-auto bg-light fs-1 fw-bolder"></div>
+    <table class="px-3 py-5">
+        <tr>
+            <td>
+                <button onclick="clearScreen()" id="btn1" class="btn bg-danger text-light fw-bolder w-100">C</button>
+               </td>
+           <td>
+               <button onclick="display('+/-')" id="btn1" class="btn bg-success fw-bolder text-light w-100">+/-</button></td>
+           <td>
+               <button onclick="display('^')" id="btn1" class="btn bg-success text-light fw-bolder  w-100">^</button></td>
+           <td>
+               <button onclick="display('/')" id="btn1" class="btn bg-success text-light fw-bolder  w-100 ">/</button></td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="display('7')" id="btn1" class="btn bg-light fw-bolder w-100">7</button>
+               </td>
+           <td>
+               <button onclick="display('8')" id="btn1" class="btn bg-light fw-bolder w-100">8</button></td>
+           <td>
+               <button onclick="display('9')" id="btn1" class="btn bg-light fw-bolder  w-100">9</button></td>
+           <td>
+               <button onclick="display('*')" id="btn1" class="btn bg-success fw-bolder text-light  w-100 ">x</button></td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="display('4')" id="btn1" class="btn bg-light fw-bolder w-100">4</button>
+               </td>
+           <td>
+               <button onclick="display('5')" id="btn1" class="btn bg-light fw-bolder w-100">5</button></td>
+           <td>
+               <button onclick="display('6')" id="btn1" class="btn bg-light fw-bolder  w-100">6</button></td>
+           <td>
+               <button onclick="display('-')" id="btn1" class="btn bg-success fw-bolder text-light  w-100 ">-</button></td>
+        </tr>
+        <tr>
+            <td>
+                 <button onclick="display('1')" id="btn1" class="btn bg-light fw-bolder w-100">1</button>
+                </td>
+            <td>
+                <button onclick="display('2')" id="btn1" class="btn bg-light fw-bolder w-100">2</button></td>
+            <td>
+                <button onclick="display('3')" id="btn1" class="btn bg-light fw-bolder  w-100">3</button></td>
+            <td rowspan="2">
+                <button onclick="calculate()" id="btnequal" class="btn bg-info fw-bolder  w-100 ">=</button></td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="display('0')" id="btn1" class="btn bg-light fw-bolder w-100">0</button>
+               </td>
+           <td>
+               <button onclick="display('.')" id="btn1" class="btn bg-light fw-bolder w-100">.</button></td>
+           <td>
+               <button onclick="display('+')" id="btn1" class="btn bg-success fw-bolder text-light  w-100">+</button></td>
+           
+        </tr>
+        
+    </table>
+    <!-- <button class="w-75 bg-danger border fw-bolder mx-auto ms-5" onclick="clearScreen()">Clear</button> -->
+    
+  </section>
+
+
+  <script>
+
+    function display(value){
+        document.getElementById('screen').innerHTML += value;
+    }
+    function clearScreen(){
+        document.getElementById('screen').innerHTML = "";
+    }
+    function calculate() {
+        var p =  document.getElementById('screen').innerHTML;
+        var q = eval(p);
+        document.getElementById('screen').innerHTML = q;
+    }
+</script>
+   
+</body>
+</html>
